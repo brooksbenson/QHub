@@ -1,0 +1,8 @@
+{
+  "name": "QHub",
+  "version": "1.0.0",
+  "description": "For every question there is an answer",
+  "main": "index.js",
+  "author": "Brooks Benson <brooksbenson01@gmail.com>",
+  "license": "MIT"
+}

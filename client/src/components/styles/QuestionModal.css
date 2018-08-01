@@ -1,0 +1,42 @@
+.question-modal {
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+  left: 50%;
+  outline: none;
+  padding: 2rem;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 25rem;
+}
+
+.question-modal__header {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.question-modal__input {
+  height: 12rem;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+.question-modal__btn {
+  background: #e0e0e0;
+  border: none;
+  box-shadow: 0 0 1px black;
+  display: block;
+  font-size: 1.2rem;
+  margin: auto;
+  outline: none;
+  padding: 0.5rem;
+  width: 50%;
+}
+
+.question-modal__btn:hover,
+.question-modal__btn:focus {
+  box-shadow: 0 1px 1px black;
+}
+
+.question-modal__btn:active {
+  box-shadow: 0 0 1px black;
+}

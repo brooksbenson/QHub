@@ -1,32 +1,50 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
-// import HorizontalNav from './HorizontalNav';
-// import VerticalNav from './VerticalNav';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Header from './Header';
+import Sidebar from './Sidebar';
+import Dashboard from './DashboardSection';
+import './styles/App.css';
 
 const Landing = () => <h1> Landing </h1>;
-const Dashboard = () => <h1> Dashboard </h1>;
 const Questions = () => <h1> Questions </h1>;
 const Answers = () => <h1> Answers </h1>;
-const HorizontalNav = () => <header />;
-const VerticalNav = () => <nav />;
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      sidebarOpen: true
+    };
+    this.onMenuButtonClick = this.onMenuButtonClick.bind(this);
+  }
+
+  onMenuButtonClick() {
+    this.setState(({ sidebarOpen }) => ({ sidebarOpen: !sidebarOpen }));
+  }
+
   render() {
+    const { sidebarOpen } = this.state;
     return (
-      <main>
-        <HorizontalNav />
-        <div>
-          <VerticalNav />
-          <BrowserRouter>
-            <section>
-              <Route path="/" component={Landing} exact />
-              <Route path="/dashboard" component={Dashboard} />
-              <Route path="/questions" component={Questions} />
-              <Route path="/answers" component={Answers} />
+      <BrowserRouter>
+        <main className="main">
+          <Header onMenuButtonClick={this.onMenuButtonClick} />
+          <div className="main__body">
+            <Sidebar open={sidebarOpen} />
+            <section
+              className={`main__content ${
+                sidebarOpen ? '' : 'main__content--full'
+              }`}
+            >
+              <Switch>
+                <Route path="/" component={Landing} exact />
+                <Route path="/dashboard" component={Dashboard} />
+                <Route path="/questions" component={Questions} />
+                <Route path="/answers" component={Answers} />
+              </Switch>
             </section>
-          </BrowserRouter>
-        </div>
-      </main>
+          </div>
+        </main>
+      </BrowserRouter>
     );
   }
 }

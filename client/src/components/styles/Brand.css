@@ -1,0 +1,17 @@
+.brand {
+  display: inline-block;
+}
+
+.brand__icon {
+  fill: #4785ee;
+  height: 3.5rem;
+  width: 3.5rem;
+}
+
+.brand__text {
+  color: #3f3f3f;
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 400;
+  margin-left: 0.5rem;
+}

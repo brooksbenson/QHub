@@ -1,0 +1,44 @@
+.bar-menu-btn {
+  border: none;
+  border-radius: 50%;
+  height: 5rem;
+  margin-right: 0.5rem;
+  outline: none;
+  position: relative;
+  width: 5rem;
+}
+
+.bar-menu-btn:hover {
+  background-color: #ededed;
+}
+
+.bar-menu-btn__bars {
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+}
+
+.bar-menu-btn__bars,
+.bar-menu-btn__bars::before,
+.bar-menu-btn__bars::after {
+  background-color: #6e6e6e;
+  display: inline-block;
+  height: 2px;
+  width: 1.75rem;
+}
+
+.bar-menu-btn__bars::before,
+.bar-menu-btn__bars::after {
+  content: '';
+  left: 0;
+  position: absolute;
+}
+
+.bar-menu-btn__bars::before {
+  top: -0.5rem;
+}
+
+.bar-menu-btn__bars::after {
+  top: 0.5rem;
+}
